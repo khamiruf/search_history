@@ -19,8 +19,7 @@ class BHistory():
                 if "Google Search" in search[1]:
                     new_search = search[1].rsplit('-', 1)
                     search_history.append(new_search[0])
-        searches = ''.join(search_history)
-        return searches
+        return ''.join(search_history)
 
 def plot_wordcloud(searches):
     # create wc obj
