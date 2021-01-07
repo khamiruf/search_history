@@ -18,7 +18,6 @@ class BHistory():
             if 'google' and 'search' in search[0]:
                 if "Google Search" in search[1]:
                     new_search = search[1].rsplit('-', 1)
-                    print(new_search)
                     search_history.append(new_search[0])
         searches = ''.join(search_history)
         return searches
