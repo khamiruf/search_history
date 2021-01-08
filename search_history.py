@@ -1,6 +1,7 @@
 import browserhistory as bh
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud, STOPWORDS
+from gensim.parsing.preprocessing import remove_stopwords
 
 
 class BHistory():
@@ -19,7 +20,9 @@ class BHistory():
                 if "Google Search" in search[1]:
                     new_search = search[1].rsplit('-', 1)
                     search_history.append(new_search[0])
-        return ''.join(search_history)
+        history = ''.join(search_history)
+
+        return remove_stopwords(history) # remove stopwords
 
 def plot_wordcloud(searches):
     # create wc obj
